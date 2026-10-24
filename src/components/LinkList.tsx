@@ -24,6 +24,7 @@ interface LinkListProps {
   onOpenShare: (link: ShortLink) => void;
   onOpenQr: (link: ShortLink) => void;
   onOpenPreview: (link: ShortLink) => void;
+  onOpenPassword: (link: ShortLink) => void;
   onDeleteLink: (id: string) => void;
   onSimulateClick: (id: string, referrer: string) => void;
 }
@@ -35,6 +36,7 @@ export const LinkList: React.FC<LinkListProps> = ({
   onOpenShare,
   onOpenQr,
   onOpenPreview,
+  onOpenPassword,
   onDeleteLink,
   onSimulateClick,
 }) => {
@@ -232,6 +234,20 @@ export const LinkList: React.FC<LinkListProps> = ({
                     >
                       <Share2 className="w-3.5 h-3.5 text-slate-600" />
                       <span>Share</span>
+                    </button>
+
+                    {/* Password Protection Action */}
+                    <button
+                      onClick={() => onOpenPassword(link)}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg border transition-colors whitespace-nowrap ${
+                        link.isPasswordProtected
+                          ? 'bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100 font-semibold'
+                          : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
+                      }`}
+                      title={link.isPasswordProtected ? 'Password protected (click to view/edit passcode)' : 'Set password for this short link'}
+                    >
+                      <Lock className={`w-3.5 h-3.5 ${link.isPasswordProtected ? 'text-amber-600' : 'text-slate-500'}`} />
+                      <span>{link.isPasswordProtected ? 'Protected' : 'Password'}</span>
                     </button>
 
                     {/* QR Code */}

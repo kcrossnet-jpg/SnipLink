@@ -15,6 +15,7 @@ import { AnalyticsModal } from './components/AnalyticsModal';
 import { UtmBuilderModal } from './components/UtmBuilderModal';
 import { BioPageModal } from './components/BioPageModal';
 import { BulkShortenModal } from './components/BulkShortenModal';
+import { PasswordModal } from './components/PasswordModal';
 import {
   Share2,
   QrCode,
@@ -40,6 +41,7 @@ export default function App() {
   const [activeQrLink, setActiveQrLink] = useState<ShortLink | null>(null);
   const [activePreviewLink, setActivePreviewLink] = useState<ShortLink | null>(null);
   const [activeAnalyticsLink, setActiveAnalyticsLink] = useState<ShortLink | null>(null);
+  const [activePasswordLink, setActivePasswordLink] = useState<ShortLink | null>(null);
   const [isUtmModalOpen, setIsUtmModalOpen] = useState(false);
   const [isBioModalOpen, setIsBioModalOpen] = useState(false);
   const [isBulkModalOpen, setIsBulkModalOpen] = useState(false);
@@ -176,6 +178,7 @@ export default function App() {
               onOpenShareModal={(l) => setActiveShareLink(l)}
               onOpenQrModal={(l) => setActiveQrLink(l)}
               onOpenCardPreview={(l) => setActivePreviewLink(l)}
+              onOpenPasswordModal={(l) => setActivePasswordLink(l)}
               baseUrl={baseUrl}
             />
 
@@ -249,6 +252,7 @@ export default function App() {
                 onOpenShare={(l) => setActiveShareLink(l)}
                 onOpenQr={(l) => setActiveQrLink(l)}
                 onOpenPreview={(l) => setActivePreviewLink(l)}
+                onOpenPassword={(l) => setActivePasswordLink(l)}
                 onDeleteLink={handleDeleteLink}
                 onSimulateClick={handleSimulateClick}
               />
@@ -282,6 +286,7 @@ export default function App() {
               onOpenShare={(l) => setActiveShareLink(l)}
               onOpenQr={(l) => setActiveQrLink(l)}
               onOpenPreview={(l) => setActivePreviewLink(l)}
+              onOpenPassword={(l) => setActivePasswordLink(l)}
               onDeleteLink={handleDeleteLink}
               onSimulateClick={handleSimulateClick}
             />
@@ -308,6 +313,14 @@ export default function App() {
         link={activeQrLink}
         baseUrl={baseUrl}
         onClose={() => setActiveQrLink(null)}
+        onUpdateLink={handleUpdateLink}
+      />
+
+      {/* Password Protection Modal */}
+      <PasswordModal
+        link={activePasswordLink}
+        baseUrl={baseUrl}
+        onClose={() => setActivePasswordLink(null)}
         onUpdateLink={handleUpdateLink}
       />
 

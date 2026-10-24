@@ -21,6 +21,7 @@ interface ShortenHeroProps {
   onOpenShareModal: (link: ShortLink) => void;
   onOpenQrModal: (link: ShortLink) => void;
   onOpenCardPreview: (link: ShortLink) => void;
+  onOpenPasswordModal: (link: ShortLink) => void;
   baseUrl: string;
 }
 
@@ -29,6 +30,7 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
   onOpenShareModal,
   onOpenQrModal,
   onOpenCardPreview,
+  onOpenPasswordModal,
   baseUrl,
 }) => {
   const [longUrl, setLongUrl] = useState('');
@@ -288,29 +290,50 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
                 </div>
 
                 {/* Password Protection */}
-                <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl space-y-2">
+                <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-xl space-y-2.5">
                   <div className="flex items-center justify-between">
                     <label className="flex items-center gap-2 text-xs font-semibold text-slate-800 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={isPasswordProtected}
-                        onChange={(e) => setIsPasswordProtected(e.target.checked)}
+                        onChange={(e) => {
+                          setIsPasswordProtected(e.target.checked);
+                          if (e.target.checked && !password) {
+                            setPassword(`vault-${Math.floor(1000 + Math.random() * 9000)}`);
+                          }
+                        }}
                         className="rounded border-slate-300 text-orange-600 focus:ring-orange-500"
                       />
-                      <Lock className="w-3.5 h-3.5 text-slate-500" />
-                      <span>Password Protect this Link</span>
+                      <Lock className="w-3.5 h-3.5 text-slate-600" />
+                      <span>Require Password to Access Destination</span>
                     </label>
-                    <span className="text-[11px] text-slate-400">Visitors must enter password to unlock</span>
+                    <span className="text-[11px] text-slate-400">Visitors must verify passcode</span>
                   </div>
 
                   {isPasswordProtected && (
-                    <input
-                      type="text"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      placeholder="Set access password (e.g. confidential2026)"
-                      className="w-full px-3 py-1.5 text-xs bg-white border border-slate-200 rounded-lg text-slate-900 focus:outline-none focus:border-orange-500"
-                    />
+                    <div className="space-y-1.5 pt-1">
+                      <div className="flex items-center justify-between text-[11px]">
+                        <span className="text-slate-600 font-medium">Access Passcode</span>
+                        <button
+                          type="button"
+                          onClick={() => setPassword(`key-${Math.floor(1000 + Math.random() * 9000)}`)}
+                          className="text-orange-600 hover:text-orange-700 font-semibold inline-flex items-center gap-1 cursor-pointer"
+                        >
+                          <Sparkles className="w-3 h-3" />
+                          <span>Generate New Passcode</span>
+                        </button>
+                      </div>
+                      <input
+                        type="text"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Set access passcode (e.g. vault-2026)"
+                        className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-900 font-mono focus:outline-none focus:border-orange-500"
+                      />
+                      <p className="text-[11px] text-slate-400">
+                        Recipients must enter this passcode before being redirected to the destination URL.
+                      </p>
+                    </div>
                   )}
                 </div>
 
@@ -381,6 +404,13 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
                   <div className="text-xs text-slate-500 truncate mt-0.5">
                     Destination: {lastCreated.originalUrl}
                   </div>
+
+                  {lastCreated.isPasswordProtected && (
+                    <div className="flex items-center gap-2 text-xs text-amber-800 bg-amber-100/80 px-2.5 py-1 rounded-md font-mono mt-2 inline-flex">
+                      <Lock className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                      <span>Protected Passcode: <strong className="text-slate-900">{lastCreated.password}</strong></span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Instant Actions */}
@@ -391,6 +421,14 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
                   >
                     {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
                     <span>{copied ? 'Copied Link!' : 'Copy'}</span>
+                  </button>
+
+                  <button
+                    onClick={() => onOpenPasswordModal(lastCreated)}
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 transition-colors"
+                  >
+                    <Lock className="w-3.5 h-3.5 text-amber-600" />
+                    <span>Passcode</span>
                   </button>
 
                   <button

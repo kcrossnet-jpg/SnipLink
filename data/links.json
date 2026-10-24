@@ -1,5 +1,36 @@
 [
   {
+    "id": "20636a9d-1f21-48c7-8ba7-57a76094161e",
+    "slug": "6wh4jg",
+    "originalUrl": "https://admin.shopify.com/store/fthebox-store/orders",
+    "title": "admin.shopify.com/store/fthebox-store/ord",
+    "description": "",
+    "createdAt": "2026-10-24T09:16:34.923Z",
+    "clicks": 1,
+    "tags": [],
+    "isPasswordProtected": false,
+    "password": "",
+    "expiresAt": null,
+    "qrConfig": {
+      "dotColor": "#0f172a",
+      "bgColor": "#ffffff",
+      "logo": "link",
+      "margin": 2
+    },
+    "utm": {},
+    "clicksData": [
+      {
+        "id": "26d98b65-a9d1-47c9-bebd-91a2160e4b3f",
+        "timestamp": "2026-10-24T09:16:44.746Z",
+        "referrer": "ais-dev-7ljpstzlbhrcpx4aqiimfe-175090436975.asia-east1.run.app",
+        "referrerCategory": "Other",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      }
+    ]
+  },
+  {
     "id": "link-1",
     "slug": "summer-launch",
     "originalUrl": "https://github.com/features/actions?utm_source=twitter&utm_medium=social&utm_campaign=summer_launch",
@@ -1072,7 +1103,7 @@
     "title": "Series B Confidential Investor Deck (Protected)",
     "description": "Private presentation deck for Series B institutional funding round.",
     "createdAt": "2026-10-21T09:14:52.177Z",
-    "clicks": 42,
+    "clicks": 44,
     "tags": [
       "investor",
       "protected",
@@ -1087,6 +1118,24 @@
       "margin": 2
     },
     "clicksData": [
+      {
+        "id": "b34bfe6c-321f-4c1f-8fb2-6420731a6ee5",
+        "timestamp": "2026-10-24T09:19:09.096Z",
+        "referrer": "Direct / In-App",
+        "referrerCategory": "Direct",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "a85ffbec-fdae-49bf-8ecb-6b064e5d8f34",
+        "timestamp": "2026-10-24T09:19:04.888Z",
+        "referrer": "Direct / In-App",
+        "referrerCategory": "Direct",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
       {
         "id": "80a3e963-b433-48e3-9a54-c35b1280f549",
         "timestamp": "2026-10-24T06:14:52.177Z",

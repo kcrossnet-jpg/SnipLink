@@ -506,8 +506,8 @@ async function startServer() {
     res.json(updated);
   });
 
-  // GET /r/:slug - Actual link redirector with real analytics tracking!
-  app.get('/r/:slug', (req, res) => {
+  // Handler for /r/:slug redirect and password verification
+  const handleRedirect = (req: express.Request, res: express.Response) => {
     const slug = req.params.slug;
     const links = getStoredLinks();
     const link = links.find(l => l.slug.toLowerCase() === slug.toLowerCase());
@@ -561,33 +561,88 @@ async function startServer() {
 
     // Check Password Protection
     if (link.isPasswordProtected && link.password) {
-      const enteredPassword = req.query.pwd;
-      if (!enteredPassword || enteredPassword !== link.password) {
+      const enteredPassword = req.body?.pwd || req.query.pwd;
+      const isAttempted = enteredPassword !== undefined && enteredPassword !== '';
+      const isMatch = isAttempted && enteredPassword === link.password;
+
+      if (!isMatch) {
         return res.send(`
           <!DOCTYPE html>
-          <html>
+          <html lang="en">
           <head>
-            <title>Protected Link - SnipLink</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta charset="UTF-8" />
+            <title>Protected Link - ${link.title || slug}</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <script src="https://cdn.tailwindcss.com"></script>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+            <style>
+              body { font-family: 'Plus Jakarta Sans', sans-serif; }
+              code, input[type="password"], input[type="text"] { font-family: 'JetBrains Mono', monospace; }
+            </style>
           </head>
-          <body class="bg-slate-900 text-slate-100 flex items-center justify-center min-h-screen p-4 font-sans">
-            <div class="max-w-md w-full bg-slate-800/90 border border-slate-700 p-8 rounded-2xl shadow-xl">
-              <div class="w-12 h-12 bg-orange-500/10 text-orange-400 rounded-xl flex items-center justify-center mb-4 text-xl">🔒</div>
-              <h1 class="text-xl font-bold text-white mb-1">Password Protected Link</h1>
-              <p class="text-slate-400 text-xs mb-6">Please enter the security password configured by the link owner to proceed.</p>
-              
-              ${enteredPassword ? '<div class="p-3 mb-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-xs">Incorrect password. Please try again.</div>' : ''}
-
-              <form method="GET" action="/r/${slug}">
-                <div class="mb-4">
-                  <label class="block text-xs font-medium text-slate-300 mb-1.5">Enter Password</label>
-                  <input type="password" name="pwd" required autofocus class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-700 rounded-lg text-white text-sm focus:outline-none focus:border-orange-500" placeholder="••••••••">
+          <body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen p-4">
+            <div class="max-w-md w-full bg-slate-900 border border-slate-800 p-6 sm:p-8 rounded-2xl shadow-2xl">
+              <!-- Security Badge -->
+              <div class="flex items-center gap-3 mb-5">
+                <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/20 text-amber-400 rounded-xl flex items-center justify-center text-xl shrink-0">
+                  🔒
                 </div>
-                <button type="submit" class="w-full py-2.5 px-4 bg-orange-600 hover:bg-orange-500 text-white font-medium rounded-lg text-sm transition-colors">
-                  Unlock & Continue &rarr;
+                <div>
+                  <h1 class="text-lg font-bold text-white leading-tight">Password Protected Link</h1>
+                  <p class="text-xs text-slate-400">Access to destination requires passcode verification</p>
+                </div>
+              </div>
+
+              <!-- Link Info Box -->
+              <div class="p-3 bg-slate-800/70 border border-slate-800 rounded-xl mb-5 space-y-1">
+                <div class="text-xs font-semibold text-slate-200 truncate">
+                  ${link.title || 'Protected Resource'}
+                </div>
+                <div class="text-[11px] text-orange-400 font-mono truncate">
+                  /r/${slug}
+                </div>
+              </div>
+              
+              ${isAttempted ? `
+                <div class="p-3 mb-5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs flex items-center gap-2">
+                  <span class="text-sm">⚠️</span>
+                  <span>Incorrect passcode. Please check with the link owner and try again.</span>
+                </div>
+              ` : ''}
+
+              <form method="POST" action="/r/${slug}">
+                <div class="mb-5">
+                  <label class="block text-xs font-semibold text-slate-300 mb-2">Enter Passcode to Unlock</label>
+                  <div class="relative">
+                    <input 
+                      type="password" 
+                      id="pwdInput" 
+                      name="pwd" 
+                      required 
+                      autofocus 
+                      class="w-full px-3.5 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white text-sm focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 placeholder:text-slate-600 transition-all pr-16" 
+                      placeholder="Enter password..."
+                    />
+                    <button 
+                      type="button" 
+                      onclick="const el = document.getElementById('pwdInput'); el.type = el.type === 'password' ? 'text' : 'password'; this.innerText = el.type === 'password' ? 'Show' : 'Hide';" 
+                      class="absolute right-2 top-2 px-2 py-1 text-xs text-slate-400 hover:text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
+                    >
+                      Show
+                    </button>
+                  </div>
+                </div>
+
+                <button type="submit" class="w-full py-2.5 px-4 bg-orange-600 hover:bg-orange-500 active:scale-[0.99] text-white font-semibold rounded-xl text-sm transition-all shadow-md shadow-orange-600/20 cursor-pointer">
+                  Unlock Destination &rarr;
                 </button>
               </form>
+
+              <div class="mt-6 pt-5 border-t border-slate-800 text-center">
+                <span class="text-[11px] text-slate-500">Secured via SnipLink Link Management</span>
+              </div>
             </div>
           </body>
           </html>
@@ -643,7 +698,10 @@ async function startServer() {
 
     // Direct 302 Redirect
     return res.redirect(302, link.originalUrl);
-  });
+  };
+
+  app.get('/r/:slug', handleRedirect);
+  app.post('/r/:slug', handleRedirect);
 
   // --- Vite / Static Handling ---
   const isProd = process.env.NODE_ENV === 'production';
