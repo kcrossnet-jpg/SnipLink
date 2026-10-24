@@ -1,0 +1,1200 @@
+[
+  {
+    "id": "link-1",
+    "slug": "summer-launch",
+    "originalUrl": "https://github.com/features/actions?utm_source=twitter&utm_medium=social&utm_campaign=summer_launch",
+    "title": "Summer 2026 Developer Platform Launch",
+    "description": "Explore the newest workflow automation and high-speed CI/CD pipeline capabilities.",
+    "createdAt": "2026-10-10T09:14:52.177Z",
+    "clicks": 1421,
+    "tags": [
+      "marketing",
+      "twitter",
+      "campaign"
+    ],
+    "isPasswordProtected": false,
+    "qrConfig": {
+      "dotColor": "#0f172a",
+      "bgColor": "#ffffff",
+      "logo": "twitter",
+      "margin": 2
+    },
+    "utm": {
+      "source": "twitter",
+      "medium": "social",
+      "campaign": "summer_launch",
+      "term": "automation",
+      "content": "hero_cta"
+    },
+    "clicksData": [
+      {
+        "id": "3ba3c723-469b-49f5-ac06-2cd166718a4a",
+        "timestamp": "2026-10-24T09:14:59.379Z",
+        "referrer": "Direct / In-App",
+        "referrerCategory": "Direct",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "9435c937-67c9-471f-8f24-ca33d7418d6f",
+        "timestamp": "2026-10-24T09:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "India"
+      },
+      {
+        "id": "6a585817-5553-40c6-b8b0-01ae022e96c0",
+        "timestamp": "2026-10-24T01:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Tablet",
+        "browser": "Firefox",
+        "country": "Japan"
+      },
+      {
+        "id": "88fa7431-7996-48e2-9749-377e2f33d6c7",
+        "timestamp": "2026-10-23T11:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "064bc273-0a9d-40a0-a196-17b69adedb56",
+        "timestamp": "2026-10-22T20:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "182e0999-19a0-4a3c-bb03-c6c78527e393",
+        "timestamp": "2026-10-22T01:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "842952a9-4a63-40c5-b3eb-32b5090a35a0",
+        "timestamp": "2026-10-21T22:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "38cd2319-fcba-4cd8-859e-95dd65ebc8c1",
+        "timestamp": "2026-10-21T15:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "b90dc72c-aced-4797-afa7-e3b577e26892",
+        "timestamp": "2026-10-21T06:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Germany"
+      },
+      {
+        "id": "166c943f-3288-4d84-84fd-29ffeb73f70a",
+        "timestamp": "2026-10-21T02:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "Australia"
+      },
+      {
+        "id": "cd709abb-81ea-4a1d-a671-01b8bd6e51c4",
+        "timestamp": "2026-10-20T22:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "4af51d81-92d5-431c-bed0-c846ddf2a51b",
+        "timestamp": "2026-10-20T15:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Germany"
+      },
+      {
+        "id": "d6876af8-0d7a-4cd8-a2cb-7b2b5e22ffbf",
+        "timestamp": "2026-10-20T10:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "Australia"
+      },
+      {
+        "id": "d92c0ded-1469-44fc-a81b-6b56d3f43e22",
+        "timestamp": "2026-10-20T09:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "Germany"
+      },
+      {
+        "id": "550f8126-ea86-4a9e-8128-37658e2da548",
+        "timestamp": "2026-10-20T01:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "Canada"
+      },
+      {
+        "id": "0b8b7619-2ec0-49f5-a975-544ac4a10834",
+        "timestamp": "2026-10-20T00:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "cc989301-8df9-45a2-9531-de3d3489a96f",
+        "timestamp": "2026-10-19T19:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "a4bf36f6-6723-4be6-9d57-ac6789f6e0f8",
+        "timestamp": "2026-10-19T06:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "France"
+      },
+      {
+        "id": "261ecfd7-4b77-4ea1-adec-aaedb3285bc6",
+        "timestamp": "2026-10-19T04:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "United States"
+      },
+      {
+        "id": "600ad2ac-996c-49ba-a8e7-b4bcf5a7c9e9",
+        "timestamp": "2026-10-18T19:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "af9fb527-3dc2-4e04-abca-65b1b38e7741",
+        "timestamp": "2026-10-18T18:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "Germany"
+      },
+      {
+        "id": "05e47acd-09f7-484d-b643-d5945728d167",
+        "timestamp": "2026-10-18T17:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "ae51fe99-30bc-4b24-994b-0935ba030f18",
+        "timestamp": "2026-10-18T14:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "Canada"
+      },
+      {
+        "id": "420aa402-0484-4a7d-b431-5cbe0dabb22d",
+        "timestamp": "2026-10-18T07:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Japan"
+      },
+      {
+        "id": "42b18f40-151b-462e-a903-ed8ad1b01b7d",
+        "timestamp": "2026-10-18T06:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Australia"
+      },
+      {
+        "id": "66ba9038-b902-456d-8b41-8e9921623f98",
+        "timestamp": "2026-10-18T02:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "India"
+      },
+      {
+        "id": "8fc0a9d0-d1af-40e5-b9d2-af04090cd09b",
+        "timestamp": "2026-10-18T01:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "1978df06-13ed-4681-afa6-738726e1ee67",
+        "timestamp": "2026-10-17T18:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "40b2c876-d1a5-4760-b818-5630488da20d",
+        "timestamp": "2026-10-16T22:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "France"
+      },
+      {
+        "id": "1e08222a-d4d1-4813-a572-4420ebc916ba",
+        "timestamp": "2026-10-16T21:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "Brazil"
+      },
+      {
+        "id": "0e504d69-aa22-4585-9c30-04813491946a",
+        "timestamp": "2026-10-16T11:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "46ed2a59-1bb1-4519-83bd-c251bade4427",
+        "timestamp": "2026-10-16T07:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "aaaf69c0-fbcf-4248-9d07-825b8140a86e",
+        "timestamp": "2026-10-15T23:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "c416a05c-9fd1-4b25-b887-f18ef258d0ca",
+        "timestamp": "2026-10-15T15:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "f87b695f-511c-4594-85fa-a660e0e46a5c",
+        "timestamp": "2026-10-15T07:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "1bba857f-bb0c-4cb6-91bc-26c9fde68c5c",
+        "timestamp": "2026-10-15T07:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "3e99c3c3-7c9f-4c7a-8b35-02850ad483a2",
+        "timestamp": "2026-10-15T00:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "e3f703d2-cefb-4e58-8855-011e3089d908",
+        "timestamp": "2026-10-14T10:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Japan"
+      },
+      {
+        "id": "4fed66a6-2282-4c75-bea5-c1536a435a26",
+        "timestamp": "2026-10-14T04:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Canada"
+      },
+      {
+        "id": "6276ae64-2fa6-49ef-a40a-15115dd42120",
+        "timestamp": "2026-10-12T22:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "71363988-122b-43db-a8f7-499237e33fae",
+        "timestamp": "2026-10-12T16:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "Canada"
+      },
+      {
+        "id": "3ea876e3-ded3-47ae-89e8-a2bdff0bb193",
+        "timestamp": "2026-10-12T14:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "Australia"
+      },
+      {
+        "id": "147a73ab-1551-4057-b0ab-5b850dad24d4",
+        "timestamp": "2026-10-12T10:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "671434db-717e-4551-b660-e017060a7b14",
+        "timestamp": "2026-10-12T03:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "9465f9af-58de-4c39-b34f-8497ea937e1d",
+        "timestamp": "2026-10-12T00:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "France"
+      },
+      {
+        "id": "5a99217d-2618-4bcb-bfe9-577556337dc5",
+        "timestamp": "2026-10-11T21:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "f38c8298-acfe-4735-94ef-a2809c06585a",
+        "timestamp": "2026-10-11T17:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "cf8c29e5-275b-41be-9eaa-20e0489f00e2",
+        "timestamp": "2026-10-11T17:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "cf6cba8b-2917-4110-a633-b0d70ea5e062",
+        "timestamp": "2026-10-11T16:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "Australia"
+      }
+    ]
+  },
+  {
+    "id": "link-2",
+    "slug": "keynote-live",
+    "originalUrl": "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    "title": "Product Keynote & Architecture Walkthrough",
+    "description": "Watch the full 45-minute live stream keynote covering next-gen cloud infra.",
+    "createdAt": "2026-10-17T09:14:52.177Z",
+    "clicks": 864,
+    "tags": [
+      "video",
+      "keynote",
+      "youtube"
+    ],
+    "isPasswordProtected": false,
+    "qrConfig": {
+      "dotColor": "#dc2626",
+      "bgColor": "#ffffff",
+      "logo": "youtube",
+      "margin": 2
+    },
+    "clicksData": [
+      {
+        "id": "a3a837b7-0486-4eb4-94e2-409b55adb49f",
+        "timestamp": "2026-10-24T03:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "daf65aae-5b4e-4d2c-9a60-ab38561dc7dc",
+        "timestamp": "2026-10-24T00:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "b32a11d4-a881-4bdf-8ec5-4d97b1ddef8b",
+        "timestamp": "2026-10-23T11:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Japan"
+      },
+      {
+        "id": "07e45b58-daa8-4096-9e61-60dd65a822b6",
+        "timestamp": "2026-10-23T10:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "d33e9421-6e91-4986-a5f7-4240ace27806",
+        "timestamp": "2026-10-22T11:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "France"
+      },
+      {
+        "id": "aef0eb73-38a8-42f3-ada3-63c48620cd65",
+        "timestamp": "2026-10-22T05:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "b050518f-c9d5-400b-9d43-767db3b65489",
+        "timestamp": "2026-10-22T00:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "f8771ca9-59fe-4a75-a7fe-f9ebd6c49ec3",
+        "timestamp": "2026-10-21T20:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "2d189b1d-593f-452f-a490-832262676785",
+        "timestamp": "2026-10-21T14:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Canada"
+      },
+      {
+        "id": "708d28b2-6fef-486d-a30a-e598977ab6f6",
+        "timestamp": "2026-10-21T13:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "France"
+      },
+      {
+        "id": "478d4c3d-3667-440f-8b54-20cf67da9d28",
+        "timestamp": "2026-10-21T12:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Australia"
+      },
+      {
+        "id": "1a0d9a97-e9d4-43bc-8e5f-63cfc00c88ca",
+        "timestamp": "2026-10-21T09:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Tablet",
+        "browser": "Safari",
+        "country": "France"
+      },
+      {
+        "id": "5eae6692-3aae-479c-a4ca-54d3794c5588",
+        "timestamp": "2026-10-21T09:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "United States"
+      },
+      {
+        "id": "0103dfa2-0908-4d9f-871f-eba3c07f579b",
+        "timestamp": "2026-10-21T06:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "f5b7984c-4860-46d3-91ff-b93f06255cf0",
+        "timestamp": "2026-10-21T05:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "Canada"
+      },
+      {
+        "id": "1769c603-cb1d-4797-bb35-00c643d14ba3",
+        "timestamp": "2026-10-21T03:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "Canada"
+      },
+      {
+        "id": "d2cbb256-1256-4cf1-936c-ca83e372d4ec",
+        "timestamp": "2026-10-21T02:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "4de54752-25c2-49cd-9479-ca5fa2ece44c",
+        "timestamp": "2026-10-21T02:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "Australia"
+      },
+      {
+        "id": "f8293171-8748-48fe-8c08-12a05370a794",
+        "timestamp": "2026-10-21T00:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "7997efd7-8365-4fe7-980f-2cccce6e53b6",
+        "timestamp": "2026-10-20T20:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Japan"
+      },
+      {
+        "id": "27f03883-d556-4eb0-95d2-50897aa77025",
+        "timestamp": "2026-10-20T20:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "France"
+      },
+      {
+        "id": "fe36284b-63e6-47c9-9e47-713b1c9d3348",
+        "timestamp": "2026-10-20T18:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "ec5ade98-41eb-4351-9d7f-6ea4c0d747c8",
+        "timestamp": "2026-10-20T16:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "2d1907ca-e985-454b-bef8-7f7ae24ef838",
+        "timestamp": "2026-10-20T03:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "0fe6b8f5-06be-4713-90e2-b8b8697cecab",
+        "timestamp": "2026-10-19T23:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "97dc9da4-de08-4e73-9185-76c6ec852ece",
+        "timestamp": "2026-10-19T15:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Japan"
+      },
+      {
+        "id": "7d8d2b87-88dc-44be-9312-31c0d76b8eef",
+        "timestamp": "2026-10-19T12:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "869e80d4-4fb3-46a6-a296-efcbf7c903aa",
+        "timestamp": "2026-10-19T09:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "Brazil"
+      },
+      {
+        "id": "3d348940-7574-426c-80aa-4a3a7c32cdde",
+        "timestamp": "2026-10-19T02:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "India"
+      },
+      {
+        "id": "1b3b1c11-f2c5-4de3-be16-32fe9362852a",
+        "timestamp": "2026-10-19T01:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "Germany"
+      },
+      {
+        "id": "a380dcb4-a4b9-4742-9477-d3f3464c25c3",
+        "timestamp": "2026-10-18T22:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "France"
+      },
+      {
+        "id": "e1eac102-be15-4b2d-ae32-bdba845e1bc1",
+        "timestamp": "2026-10-18T16:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Tablet",
+        "browser": "Firefox",
+        "country": "Canada"
+      },
+      {
+        "id": "8e3c33bf-ad23-4375-aa12-2349711ebbd1",
+        "timestamp": "2026-10-18T13:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "United States"
+      },
+      {
+        "id": "9b59704f-c416-4bfc-b5f7-1a68592579f5",
+        "timestamp": "2026-10-18T08:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "68e2e81e-2780-4f73-980a-262c63b2ded8",
+        "timestamp": "2026-10-18T02:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Tablet",
+        "browser": "Safari",
+        "country": "United States"
+      },
+      {
+        "id": "123e4295-7a75-4c77-ae4f-6eac99880b0a",
+        "timestamp": "2026-10-17T19:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Australia"
+      }
+    ]
+  },
+  {
+    "id": "link-3",
+    "slug": "founder-bio",
+    "originalUrl": "https://linkedin.com/in/alex-morgan-tech",
+    "title": "Alex Morgan - Executive Bio & Advisory Roles",
+    "description": "Connect with Alex regarding angel investments, engineering advisory, and speaking.",
+    "createdAt": "2026-10-03T09:14:52.177Z",
+    "clicks": 532,
+    "tags": [
+      "bio",
+      "linkedin",
+      "personal"
+    ],
+    "isPasswordProtected": false,
+    "qrConfig": {
+      "dotColor": "#0284c7",
+      "bgColor": "#ffffff",
+      "logo": "link",
+      "margin": 2
+    },
+    "clicksData": [
+      {
+        "id": "6d3c2101-dd84-439a-9d96-7a3acc0fec27",
+        "timestamp": "2026-10-22T18:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Australia"
+      },
+      {
+        "id": "b52530e0-600d-4f1a-97de-6ca24aadd43a",
+        "timestamp": "2026-10-16T12:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Australia"
+      },
+      {
+        "id": "408ee496-bc1d-4993-944b-9e1733f596d8",
+        "timestamp": "2026-10-16T03:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Australia"
+      },
+      {
+        "id": "437a554f-aa9c-4fd2-8a67-61ce4977c4d6",
+        "timestamp": "2026-10-16T01:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "4c52a691-4c83-4a17-8246-e20078be278b",
+        "timestamp": "2026-10-15T21:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "ea8e1f28-38ae-440d-823f-28abc8830104",
+        "timestamp": "2026-10-15T21:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "de931788-4946-4616-82d6-a7e2d8cfab93",
+        "timestamp": "2026-10-14T07:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "7e968b79-1514-4b02-b649-50830c1d1792",
+        "timestamp": "2026-10-13T20:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "df1a3eb7-9444-42a9-b40d-80c188ac1091",
+        "timestamp": "2026-10-13T17:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "Canada"
+      },
+      {
+        "id": "f2ba167f-c45b-439b-a050-2355de65b54b",
+        "timestamp": "2026-10-13T00:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "420213f7-7a7b-4d3c-ac13-27f6c428d97e",
+        "timestamp": "2026-10-12T05:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Japan"
+      },
+      {
+        "id": "4d5fadba-5bb3-4274-96ac-f9dfa6435072",
+        "timestamp": "2026-10-11T20:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "2e7069c8-24b7-49fb-8463-2542f43a492e",
+        "timestamp": "2026-10-11T12:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "dd783ce2-173e-4c88-aebf-7b1e39891713",
+        "timestamp": "2026-10-11T08:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "b62f3c50-1b07-48e2-add7-8aeb12f33e60",
+        "timestamp": "2026-10-10T13:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "26d0be4d-191e-4f4c-a5b1-ba9b03cdf6bf",
+        "timestamp": "2026-10-10T12:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "India"
+      },
+      {
+        "id": "095ace88-51b6-48e6-9a2d-525a00c543b9",
+        "timestamp": "2026-10-10T06:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "France"
+      },
+      {
+        "id": "85718016-36ef-4963-96df-198159381304",
+        "timestamp": "2026-10-08T13:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Brazil"
+      },
+      {
+        "id": "9ce1a226-55ec-4935-9fbc-1911061a5ff3",
+        "timestamp": "2026-10-07T19:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Mobile",
+        "browser": "Firefox",
+        "country": "France"
+      },
+      {
+        "id": "b8870de9-6d3a-4419-b335-7a501a0148fb",
+        "timestamp": "2026-10-07T18:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "France"
+      },
+      {
+        "id": "726dcc36-78fb-48d3-8a84-05e77b61f647",
+        "timestamp": "2026-10-07T04:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Canada"
+      },
+      {
+        "id": "153e4acb-d11f-4d7b-981f-2455cff008e2",
+        "timestamp": "2026-10-07T02:14:52.177Z",
+        "referrer": "LinkedIn",
+        "referrerCategory": "LinkedIn",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Canada"
+      },
+      {
+        "id": "8bd8ba07-e182-4af1-8508-3427b9f0fc56",
+        "timestamp": "2026-10-05T08:14:52.177Z",
+        "referrer": "Facebook",
+        "referrerCategory": "Facebook",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "3f428e9e-8905-41bb-a6ff-aa40713e9d50",
+        "timestamp": "2026-10-04T22:14:52.177Z",
+        "referrer": "Twitter / X",
+        "referrerCategory": "Twitter/X",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "Australia"
+      },
+      {
+        "id": "08e1e30e-0ae0-44aa-8398-a9392d7035c5",
+        "timestamp": "2026-10-04T22:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "France"
+      }
+    ]
+  },
+  {
+    "id": "link-4",
+    "slug": "confidential-deck",
+    "originalUrl": "https://docs.google.com/presentation/d/sample-pitch-deck",
+    "title": "Series B Confidential Investor Deck (Protected)",
+    "description": "Private presentation deck for Series B institutional funding round.",
+    "createdAt": "2026-10-21T09:14:52.177Z",
+    "clicks": 42,
+    "tags": [
+      "investor",
+      "protected",
+      "pitch"
+    ],
+    "isPasswordProtected": true,
+    "password": "investor2026",
+    "qrConfig": {
+      "dotColor": "#475569",
+      "bgColor": "#ffffff",
+      "logo": "none",
+      "margin": 2
+    },
+    "clicksData": [
+      {
+        "id": "80a3e963-b433-48e3-9a54-c35b1280f549",
+        "timestamp": "2026-10-24T06:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "c53fbd88-3152-421c-9bc6-cccea40f5be4",
+        "timestamp": "2026-10-23T16:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Safari",
+        "country": "France"
+      },
+      {
+        "id": "48e2deb1-f07c-42cf-9533-98c5d040de2d",
+        "timestamp": "2026-10-23T15:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "c33d17ff-cd74-4db7-8c78-0c7fada17ade",
+        "timestamp": "2026-10-23T12:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Safari",
+        "country": "Japan"
+      },
+      {
+        "id": "084ee36c-7da9-4bac-a778-36cbba27da62",
+        "timestamp": "2026-10-23T06:14:52.177Z",
+        "referrer": "Direct / Bookmark",
+        "referrerCategory": "Direct",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Japan"
+      },
+      {
+        "id": "32726fc8-d247-4100-b45f-d868450fa9e3",
+        "timestamp": "2026-10-22T20:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "036be3e2-431d-4d22-8dd5-6cd0a119c7d9",
+        "timestamp": "2026-10-22T17:14:52.177Z",
+        "referrer": "Email Newsletter",
+        "referrerCategory": "Email",
+        "device": "Tablet",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "f02c97d0-f4d8-4fd5-a008-0098c5c2c696",
+        "timestamp": "2026-10-22T09:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "United States"
+      },
+      {
+        "id": "fa7d431d-b701-40e3-b1a1-cdd70d3b6f1e",
+        "timestamp": "2026-10-22T08:14:52.177Z",
+        "referrer": "Reddit",
+        "referrerCategory": "Reddit",
+        "device": "Desktop",
+        "browser": "Chrome",
+        "country": "Germany"
+      },
+      {
+        "id": "0c49f881-6049-40e5-a89f-91bb17b79b09",
+        "timestamp": "2026-10-22T04:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Desktop",
+        "browser": "Firefox",
+        "country": "United Kingdom"
+      },
+      {
+        "id": "94f6cd55-f853-420f-b27e-abee0abdf814",
+        "timestamp": "2026-10-22T02:14:52.177Z",
+        "referrer": "WhatsApp",
+        "referrerCategory": "WhatsApp",
+        "device": "Mobile",
+        "browser": "Chrome",
+        "country": "Australia"
+      },
+      {
+        "id": "615be4b2-7b3a-4c63-ad65-215b5de69eb0",
+        "timestamp": "2026-10-21T11:14:52.177Z",
+        "referrer": "Instagram Bio",
+        "referrerCategory": "Instagram",
+        "device": "Tablet",
+        "browser": "Firefox",
+        "country": "Canada"
+      }
+    ]
+  }
+]

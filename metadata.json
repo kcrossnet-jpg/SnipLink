@@ -1,0 +1,6 @@
+{
+  "name": "SnipLink - URL Shortener & Social Share Platform",
+  "description": "Shorten links, generate custom branded URLs, create styled QR codes, track real-time click analytics, and share effortlessly across social media.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
