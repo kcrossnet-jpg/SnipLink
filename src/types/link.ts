@@ -40,16 +40,3 @@ export interface ShortLink {
   utm?: UtmParams;
   clicksData: ClickEvent[];
 }
-
-export interface BioProfile {
-  username: string;
-  displayName: string;
-  bio: string;
-  avatarUrl: string;
-  theme: 'slate' | 'minimal' | 'sunset' | 'emerald' | 'indigo';
-  socialLinks: {
-    platform: 'twitter' | 'instagram' | 'github' | 'linkedin' | 'youtube' | 'website';
-    url: string;
-  }[];
-  linkIds: string[];
-}

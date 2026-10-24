@@ -13,7 +13,6 @@ import { SocialCardSimulatorModal } from './components/SocialCardSimulatorModal'
 import { QrModal } from './components/QrModal';
 import { AnalyticsModal } from './components/AnalyticsModal';
 import { UtmBuilderModal } from './components/UtmBuilderModal';
-import { BioPageModal } from './components/BioPageModal';
 import { BulkShortenModal } from './components/BulkShortenModal';
 import { PasswordModal } from './components/PasswordModal';
 import {
@@ -28,13 +27,14 @@ import {
   BarChart3,
   ExternalLink,
   Zap,
-  Globe
+  Globe,
+  Lock
 } from 'lucide-react';
 
 export default function App() {
   const [links, setLinks] = useState<ShortLink[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'shortener' | 'links' | 'qr' | 'utm' | 'bio'>('shortener');
+  const [activeTab, setActiveTab] = useState<'shortener' | 'links' | 'qr' | 'utm'>('shortener');
 
   // Modals state
   const [activeShareLink, setActiveShareLink] = useState<ShortLink | null>(null);
@@ -43,7 +43,6 @@ export default function App() {
   const [activeAnalyticsLink, setActiveAnalyticsLink] = useState<ShortLink | null>(null);
   const [activePasswordLink, setActivePasswordLink] = useState<ShortLink | null>(null);
   const [isUtmModalOpen, setIsUtmModalOpen] = useState(false);
-  const [isBioModalOpen, setIsBioModalOpen] = useState(false);
   const [isBulkModalOpen, setIsBulkModalOpen] = useState(false);
 
   // Quick feedback toast
@@ -156,8 +155,6 @@ export default function App() {
             else showToast('Please create a short link first to open QR studio.');
           } else if (tab === 'utm') {
             setIsUtmModalOpen(true);
-          } else if (tab === 'bio') {
-            setIsBioModalOpen(true);
           } else {
             setActiveTab(tab);
           }
@@ -215,17 +212,20 @@ export default function App() {
               </button>
 
               <button
-                onClick={() => setIsBioModalOpen(true)}
+                onClick={() => {
+                  if (links.length > 0) setActiveQrLink(links[0]);
+                  else showToast('Create a short link first to design a QR code');
+                }}
                 className="p-4 bg-white rounded-xl border border-slate-200/90 hover:border-slate-300 transition-all text-left group shadow-2xs"
               >
                 <div className="flex items-center gap-2.5 mb-1.5">
                   <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                    <Smartphone className="w-4 h-4" />
+                    <QrCode className="w-4 h-4" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900">Link-in-Bio Page</h3>
+                  <h3 className="text-sm font-bold text-slate-900">QR Code Studio</h3>
                 </div>
                 <p className="text-xs text-slate-500 leading-relaxed">
-                  Create a unified mobile landing page for Instagram and TikTok bio links.
+                  Generate branded high-res PNG &amp; vector SVG QR codes with logo badges.
                 </p>
               </button>
             </div>
@@ -340,14 +340,6 @@ export default function App() {
         baseUrl={baseUrl}
       />
 
-      {/* Link-in-Bio Profile Modal */}
-      <BioPageModal
-        isOpen={isBioModalOpen}
-        onClose={() => setIsBioModalOpen(false)}
-        links={links}
-        baseUrl={baseUrl}
-      />
-
       {/* Bulk Shortener Modal */}
       <BulkShortenModal
         isOpen={isBulkModalOpen}
@@ -370,8 +362,14 @@ export default function App() {
             <button onClick={() => setIsUtmModalOpen(true)} className="hover:text-slate-900 transition-colors">
               UTM Builder
             </button>
-            <button onClick={() => setIsBioModalOpen(true)} className="hover:text-slate-900 transition-colors">
-              Link-in-Bio
+            <button
+              onClick={() => {
+                if (links.length > 0) setActiveQrLink(links[0]);
+                else showToast('Create a link first to open QR studio');
+              }}
+              className="hover:text-slate-900 transition-colors"
+            >
+              QR Studio
             </button>
             <button onClick={() => setIsBulkModalOpen(true)} className="hover:text-slate-900 transition-colors">
               Bulk Shortener

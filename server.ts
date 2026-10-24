@@ -10,7 +10,6 @@ const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, 'data');
 const LINKS_FILE = path.join(DATA_DIR, 'links.json');
-const BIO_FILE = path.join(DATA_DIR, 'bio.json');
 
 // Ensure data folder exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -165,42 +164,6 @@ function saveLinks(links: any[]) {
     fs.writeFileSync(LINKS_FILE, JSON.stringify(links, null, 2), 'utf8');
   } catch (err) {
     console.error('Error saving links:', err);
-  }
-}
-
-function getStoredBio(): any {
-  try {
-    if (!fs.existsSync(BIO_FILE)) {
-      const initial = {
-        username: 'creator',
-        displayName: 'Alex Morgan',
-        bio: 'Product Engineer & Creator. Sharing tools, tech breakdowns, and founder dispatches.',
-        avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80',
-        theme: 'slate',
-        socialLinks: [
-          { platform: 'twitter', url: 'https://x.com' },
-          { platform: 'linkedin', url: 'https://linkedin.com' },
-          { platform: 'github', url: 'https://github.com' },
-          { platform: 'youtube', url: 'https://youtube.com' }
-        ],
-        linkIds: ['link-1', 'link-2', 'link-3']
-      };
-      fs.writeFileSync(BIO_FILE, JSON.stringify(initial, null, 2), 'utf8');
-      return initial;
-    }
-    const data = fs.readFileSync(BIO_FILE, 'utf8');
-    return JSON.parse(data);
-  } catch (err) {
-    console.error('Error reading bio:', err);
-    return null;
-  }
-}
-
-function saveBio(bio: any) {
-  try {
-    fs.writeFileSync(BIO_FILE, JSON.stringify(bio, null, 2), 'utf8');
-  } catch (err) {
-    console.error('Error saving bio:', err);
   }
 }
 
@@ -491,19 +454,6 @@ async function startServer() {
     } catch {
       res.status(400).json({ error: 'Invalid URL provided' });
     }
-  });
-
-  // GET /api/bio - Bio Profile
-  app.get('/api/bio', (req, res) => {
-    const bio = getStoredBio();
-    res.json(bio);
-  });
-
-  // POST /api/bio - Update Bio Profile
-  app.post('/api/bio', (req, res) => {
-    const updated = { ...getStoredBio(), ...req.body };
-    saveBio(updated);
-    res.json(updated);
   });
 
   // Handler for /r/:slug redirect and password verification

@@ -2,8 +2,8 @@ import React from 'react';
 import { Plus } from 'lucide-react';
 
 interface NavbarProps {
-  activeTab: 'shortener' | 'links' | 'qr' | 'utm' | 'bio';
-  onSelectTab: (tab: 'shortener' | 'links' | 'qr' | 'utm' | 'bio') => void;
+  activeTab: 'shortener' | 'links' | 'qr' | 'utm';
+  onSelectTab: (tab: 'shortener' | 'links' | 'qr' | 'utm') => void;
   onOpenCreate: () => void;
 }
 
@@ -22,7 +22,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab, onOpenCr
           <span className="font-extrabold tracking-tight">SnipLink</span>
         </button>
 
-        {/* Zone 2: 4–5 clean single-line text navigation links */}
+        {/* Zone 2: 4 clean single-line text navigation links */}
         <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
           <button
             onClick={() => onSelectTab('shortener')}
@@ -63,16 +63,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeTab, onSelectTab, onOpenCr
             }`}
           >
             Campaigns
-          </button>
-          <button
-            onClick={() => onSelectTab('bio')}
-            className={`transition-colors whitespace-nowrap shrink-0 py-1 border-b-2 ${
-              activeTab === 'bio'
-                ? 'text-orange-600 border-orange-600 font-semibold'
-                : 'border-transparent hover:text-slate-900'
-            }`}
-          >
-            Bio Page
           </button>
         </nav>
 
