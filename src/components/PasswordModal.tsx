@@ -13,7 +13,9 @@ import {
   Sparkles,
   Shield,
   ShieldCheck,
-  ExternalLink
+  ExternalLink,
+  Flame,
+  AlertCircle
 } from 'lucide-react';
 
 interface PasswordModalProps {
@@ -34,16 +36,20 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
   const fullShortUrl = `${baseUrl}/r/${link.slug}`;
   const [isProtected, setIsProtected] = useState<boolean>(link.isPasswordProtected);
   const [password, setPassword] = useState<string>(link.password || '');
+  const [burnAfterUse, setBurnAfterUse] = useState<boolean>(link.burnAfterUse || false);
   const [showPassword, setShowPassword] = useState(false);
   const [copiedNote, setCopiedNote] = useState(false);
   const [copiedPassword, setCopiedPassword] = useState(false);
   const [saving, setSaving] = useState(false);
   const [savedSuccess, setSavedSuccess] = useState(false);
+  const [modalError, setModalError] = useState<string | null>(null);
 
   useEffect(() => {
     setIsProtected(link.isPasswordProtected);
     setPassword(link.password || '');
+    setBurnAfterUse(Boolean(link.burnAfterUse));
     setSavedSuccess(false);
+    setModalError(null);
   }, [link]);
 
   // Generate clean readable passcode
@@ -54,18 +60,21 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
     const newPass = `${randomWord}-${randomNum}`;
     setPassword(newPass);
     setIsProtected(true);
+    setModalError(null);
   };
 
   const handleSave = async () => {
     if (isProtected && !password.trim()) {
-      alert('Please enter a password or disable password protection.');
+      setModalError('Please enter a passcode or click "Generate Passcode" before saving.');
       return;
     }
 
+    setModalError(null);
     setSaving(true);
     await onUpdateLink(link.id, {
       isPasswordProtected: isProtected,
       password: isProtected ? password.trim() : '',
+      burnAfterUse,
     });
     setSaving(false);
     setSavedSuccess(true);
@@ -115,10 +124,10 @@ export const PasswordModal: React.FC<PasswordModalProps> = ({
             </div>
             <div>
               <h2 className="text-base font-bold text-slate-900">
-                Password Protection
+                Access &amp; Security Controls
               </h2>
               <p className="text-xs text-slate-500">
-                Gate destination access behind a security passcode
+                Passcode protection and auto-delete self-destruct options
               </p>
             </div>
           </div>
@@ -277,10 +286,48 @@ ${fullShortUrl}
             </div>
           )}
 
+          {/* Auto-Delete / Single-Use Toggle (Burn After First Use) */}
+          <div className="flex items-center justify-between p-3.5 rounded-xl border border-slate-200 bg-white">
+            <div className="flex items-center gap-3">
+              <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${
+                burnAfterUse ? 'bg-red-500 text-white shadow-sm' : 'bg-slate-100 text-slate-400'
+              }`}>
+                <Flame className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="text-xs font-bold text-slate-900 block">
+                  Auto-Delete After 1 Use (Single-Use Link)
+                </span>
+                <span className="text-[11px] text-slate-500 block">
+                  {burnAfterUse
+                    ? 'Permanently self-destructs and deletes immediately after first access'
+                    : 'Link remains active for repeated visits'}
+                </span>
+              </div>
+            </div>
+
+            <label className="relative inline-flex items-center cursor-pointer">
+              <input
+                type="checkbox"
+                checked={burnAfterUse}
+                onChange={(e) => setBurnAfterUse(e.target.checked)}
+                className="sr-only peer"
+              />
+              <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-600"></div>
+            </label>
+          </div>
+
+          {modalError && (
+            <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-xs text-red-700 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+              <span>{modalError}</span>
+            </div>
+          )}
+
           {savedSuccess && (
             <div className="p-2.5 bg-emerald-50 border border-emerald-200 rounded-lg text-xs text-emerald-800 flex items-center gap-2">
               <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Password protection settings updated successfully!</span>
+              <span>Security and auto-delete settings updated successfully!</span>
             </div>
           )}
         </div>

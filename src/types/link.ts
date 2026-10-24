@@ -36,6 +36,8 @@ export interface ShortLink {
   isPasswordProtected: boolean;
   password?: string;
   expiresAt?: string;
+  burnAfterUse?: boolean;
+  maxClicks?: number;
   qrConfig: QrConfig;
   utm?: UtmParams;
   clicksData: ClickEvent[];

@@ -14,7 +14,9 @@ import {
   Eye,
   Calendar,
   Sparkles,
-  Zap
+  Zap,
+  Flame,
+  AlertTriangle
 } from 'lucide-react';
 
 interface LinkListProps {
@@ -44,6 +46,7 @@ export const LinkList: React.FC<LinkListProps> = ({
   const [selectedTag, setSelectedTag] = useState<string>('all');
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [simulatingId, setSimulatingId] = useState<string | null>(null);
+  const [linkToDelete, setLinkToDelete] = useState<ShortLink | null>(null);
 
   // Extract all distinct tags
   const allTags = Array.from(
@@ -149,10 +152,16 @@ export const LinkList: React.FC<LinkListProps> = ({
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
                   {/* Left Column: Link Information & Clean Metadata */}
                   <div className="min-w-0 flex-1 space-y-1.5">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 flex-wrap">
                       <h3 className="text-sm sm:text-base font-semibold text-slate-900 truncate">
                         {link.title}
                       </h3>
+                      {link.burnAfterUse && (
+                        <span title="Single-Use: Link automatically deleted after first visitor uses it" className="inline-flex items-center gap-1 text-[11px] font-semibold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-md">
+                          <Flame className="w-3 h-3 text-red-500" />
+                          <span>Auto-Deletes After 1 Use</span>
+                        </span>
+                      )}
                       {link.isPasswordProtected && (
                         <span title="Password Protected" className="text-amber-600 inline-flex items-center text-xs">
                           <Lock className="w-3.5 h-3.5" />
@@ -278,14 +287,10 @@ export const LinkList: React.FC<LinkListProps> = ({
                       <Zap className={`w-4 h-4 ${isSimulating ? 'animate-bounce text-orange-500' : ''}`} />
                     </button>
 
-                    {/* Delete Link */}
+                    {/* Delete Link (In-app confirmation, zero window.confirm) */}
                     <button
-                      onClick={() => {
-                        if (confirm(`Delete short link "${link.slug}"?`)) {
-                          onDeleteLink(link.id);
-                        }
-                      }}
-                      className="p-1.5 text-slate-400 hover:text-red-600 rounded-lg hover:bg-red-50 transition-colors"
+                      onClick={() => setLinkToDelete(link)}
+                      className="p-1.5 text-slate-400 hover:text-red-600 rounded-lg hover:bg-red-50 transition-colors cursor-pointer"
                       title="Delete link"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -295,6 +300,61 @@ export const LinkList: React.FC<LinkListProps> = ({
               </div>
             );
           })}
+        </div>
+      )}
+
+      {/* In-App Deletion Confirmation Modal (Fully compatible with iframe sandbox) */}
+      {linkToDelete && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
+          <div className="bg-white rounded-2xl max-w-md w-full border border-slate-200 shadow-2xl p-6 text-left space-y-4 animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0 border border-red-100">
+                <Trash2 className="w-5 h-5" />
+              </div>
+              <div>
+                <h3 className="text-base font-bold text-slate-900">Delete Short Link?</h3>
+                <p className="text-xs text-slate-500">This action will permanently delete this link</p>
+              </div>
+            </div>
+
+            <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
+              <div className="text-xs font-semibold text-slate-800 truncate">
+                {linkToDelete.title}
+              </div>
+              <div className="text-xs text-orange-600 font-mono truncate">
+                {baseUrl}/r/{linkToDelete.slug}
+              </div>
+              <div className="text-[11px] text-slate-500 truncate">
+                Destination: {linkToDelete.originalUrl}
+              </div>
+            </div>
+
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Are you sure? Once deleted, any visitor opening this short URL or scanning its QR code will receive a 404 Not Found page.
+            </p>
+
+            <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-100">
+              <button
+                type="button"
+                onClick={() => setLinkToDelete(null)}
+                className="px-4 py-2 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white border border-slate-200 rounded-lg transition-colors cursor-pointer"
+              >
+                Keep Link
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  const id = linkToDelete.id;
+                  setLinkToDelete(null);
+                  onDeleteLink(id);
+                }}
+                className="px-4 py-2 text-xs font-semibold text-white bg-red-600 hover:bg-red-500 rounded-lg transition-colors shadow-xs shadow-red-600/20 cursor-pointer flex items-center gap-1.5"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                <span>Yes, Delete Link</span>
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -13,7 +13,8 @@ import {
   Tag,
   Eye,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Flame
 } from 'lucide-react';
 
 interface ShortenHeroProps {
@@ -41,6 +42,7 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [isPasswordProtected, setIsPasswordProtected] = useState(false);
   const [password, setPassword] = useState('');
+  const [burnAfterUse, setBurnAfterUse] = useState(false);
   const [expiresAt, setExpiresAt] = useState('');
   const [utmSource, setUtmSource] = useState('');
   const [utmMedium, setUtmMedium] = useState('');
@@ -82,6 +84,7 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
       tags,
       isPasswordProtected,
       password: isPasswordProtected ? password : '',
+      burnAfterUse,
       expiresAt: expiresAt || undefined,
       utm: (utmSource || utmMedium || utmCampaign) ? {
         source: utmSource.trim() || undefined,
@@ -110,6 +113,7 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
       setTagsInput('');
       setIsPasswordProtected(false);
       setPassword('');
+      setBurnAfterUse(false);
       setExpiresAt('');
       setUtmSource('');
       setUtmMedium('');
@@ -337,6 +341,26 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
                   )}
                 </div>
 
+                {/* Single-Use / Auto-Delete After Use (Burn After 1 Click) */}
+                <div className="p-3.5 bg-slate-50 border border-slate-200/80 rounded-xl space-y-2">
+                  <div className="flex items-center justify-between">
+                    <label className="flex items-center gap-2 text-xs font-semibold text-slate-800 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={burnAfterUse}
+                        onChange={(e) => setBurnAfterUse(e.target.checked)}
+                        className="rounded border-slate-300 text-red-600 focus:ring-red-500"
+                      />
+                      <Flame className="w-3.5 h-3.5 text-red-500" />
+                      <span>Auto-Delete After 1 Use (Burn on First Visit)</span>
+                    </label>
+                    <span className="text-[11px] text-slate-400">Self-destruct link</span>
+                  </div>
+                  <p className="text-[11px] text-slate-500 pl-5 leading-relaxed">
+                    The short link will automatically and permanently delete itself as soon as the recipient opens it. Subsequent visits will display a 410 "Link Burned &amp; Deleted" screen.
+                  </p>
+                </div>
+
                 {/* Integrated UTM Builder */}
                 <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-xl">
                   <div className="text-xs font-semibold text-slate-800 mb-2">
@@ -406,9 +430,16 @@ export const ShortenHero: React.FC<ShortenHeroProps> = ({
                   </div>
 
                   {lastCreated.isPasswordProtected && (
-                    <div className="flex items-center gap-2 text-xs text-amber-800 bg-amber-100/80 px-2.5 py-1 rounded-md font-mono mt-2 inline-flex">
+                    <div className="flex items-center gap-2 text-xs text-amber-800 bg-amber-100/80 px-2.5 py-1 rounded-md font-mono mt-2 inline-flex mr-2">
                       <Lock className="w-3.5 h-3.5 text-amber-700 shrink-0" />
                       <span>Protected Passcode: <strong className="text-slate-900">{lastCreated.password}</strong></span>
+                    </div>
+                  )}
+
+                  {lastCreated.burnAfterUse && (
+                    <div className="flex items-center gap-2 text-xs text-red-700 bg-red-100/80 px-2.5 py-1 rounded-md font-medium mt-2 inline-flex">
+                      <Flame className="w-3.5 h-3.5 text-red-600 shrink-0" />
+                      <span>🔥 Single-Use: Link auto-deletes immediately after first click.</span>
                     </div>
                   )}
                 </div>

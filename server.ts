@@ -10,6 +10,33 @@ const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.resolve(__dirname, 'data');
 const LINKS_FILE = path.join(DATA_DIR, 'links.json');
+const BURNED_FILE = path.join(DATA_DIR, 'burned.json');
+
+// Persistent set of burned slugs that auto-deleted after single use
+function getBurnedSlugs(): Set<string> {
+  try {
+    if (fs.existsSync(BURNED_FILE)) {
+      const data = fs.readFileSync(BURNED_FILE, 'utf8');
+      const arr = JSON.parse(data);
+      if (Array.isArray(arr)) {
+        return new Set(arr.map(s => String(s).toLowerCase()));
+      }
+    }
+  } catch (err) {
+    console.error('Error reading burned slugs:', err);
+  }
+  return new Set();
+}
+
+function recordBurnedSlug(slug: string) {
+  try {
+    const current = getBurnedSlugs();
+    current.add(slug.toLowerCase());
+    fs.writeFileSync(BURNED_FILE, JSON.stringify(Array.from(current), null, 2), 'utf8');
+  } catch (err) {
+    console.error('Error recording burned slug:', err);
+  }
+}
 
 // Ensure data folder exists
 if (!fs.existsSync(DATA_DIR)) {
@@ -255,7 +282,7 @@ async function startServer() {
 
   // POST /api/links - create new link
   app.post('/api/links', (req, res) => {
-    const { originalUrl, customSlug, title, description, tags, isPasswordProtected, password, expiresAt, utm, qrConfig } = req.body;
+    const { originalUrl, customSlug, title, description, tags, isPasswordProtected, password, expiresAt, burnAfterUse, maxClicks, utm, qrConfig } = req.body;
 
     if (!originalUrl || typeof originalUrl !== 'string') {
       return res.status(400).json({ error: 'Valid URL is required' });
@@ -316,6 +343,8 @@ async function startServer() {
       isPasswordProtected: Boolean(isPasswordProtected && password),
       password: isPasswordProtected ? password : '',
       expiresAt: expiresAt || null,
+      burnAfterUse: Boolean(burnAfterUse),
+      maxClicks: maxClicks ? Number(maxClicks) : undefined,
       qrConfig: qrConfig || {
         dotColor: '#0f172a',
         bgColor: '#ffffff',
@@ -351,7 +380,7 @@ async function startServer() {
     }
 
     const current = links[index];
-    const { title, description, tags, slug, isPasswordProtected, password, expiresAt, qrConfig } = req.body;
+    const { title, description, tags, slug, isPasswordProtected, password, expiresAt, burnAfterUse, maxClicks, qrConfig } = req.body;
 
     if (slug && slug.toLowerCase() !== current.slug.toLowerCase()) {
       const cleanSlug = slug.trim().toLowerCase().replace(/[^a-z0-9_-]/g, '-');
@@ -371,6 +400,8 @@ async function startServer() {
       if (!isPasswordProtected) current.password = '';
     }
     if (expiresAt !== undefined) current.expiresAt = expiresAt;
+    if (burnAfterUse !== undefined) current.burnAfterUse = Boolean(burnAfterUse);
+    if (maxClicks !== undefined) current.maxClicks = maxClicks ? Number(maxClicks) : undefined;
     if (qrConfig !== undefined) current.qrConfig = { ...current.qrConfig, ...qrConfig };
 
     links[index] = current;
@@ -459,6 +490,32 @@ async function startServer() {
   // Handler for /r/:slug redirect and password verification
   const handleRedirect = (req: express.Request, res: express.Response) => {
     const slug = req.params.slug;
+
+    // Check if this single-use link was already used and burned
+    const burnedSlugs = getBurnedSlugs();
+    if (burnedSlugs.has(slug.toLowerCase())) {
+      return res.status(410).send(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>Link Burned &amp; Deleted - SnipLink</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+        <body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen p-4 font-sans">
+          <div class="max-w-md w-full bg-slate-900 border border-slate-800 p-8 rounded-2xl text-center shadow-2xl">
+            <div class="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">🔥</div>
+            <h1 class="text-xl font-bold text-white mb-2">Single-Use Link Burned &amp; Deleted</h1>
+            <p class="text-slate-400 text-xs mb-6">This short link was configured to auto-delete after use. It has already been opened and permanently destroyed for privacy.</p>
+            <a href="/" class="inline-flex items-center justify-center px-4 py-2.5 bg-orange-600 hover:bg-orange-500 text-white font-medium rounded-lg transition-colors text-xs">
+              Go to SnipLink Home
+            </a>
+          </div>
+        </body>
+        </html>
+      `);
+    }
+
     const links = getStoredLinks();
     const link = links.find(l => l.slug.toLowerCase() === slug.toLowerCase());
 
@@ -618,7 +675,15 @@ async function startServer() {
 
     link.clicks = (link.clicks || 0) + 1;
     link.clicksData = [clickRecord, ...(link.clicksData || [])];
-    saveLinks(links);
+
+    // AUTO-DELETE / SELF-DESTRUCT: If link is marked burnAfterUse, delete it immediately after use!
+    if (link.burnAfterUse) {
+      recordBurnedSlug(slug);
+      const remainingLinks = links.filter(l => l.id !== link.id);
+      saveLinks(remainingLinks);
+    } else {
+      saveLinks(links);
+    }
 
     // If client requested no direct redirect (e.g. preview mode), render instant forwarding card
     if (req.query.preview === '1') {
@@ -636,6 +701,7 @@ async function startServer() {
             <div class="w-12 h-12 bg-orange-500/10 text-orange-400 rounded-full flex items-center justify-center mx-auto mb-4 animate-spin text-xl">⚡</div>
             <h1 class="text-lg font-bold text-white mb-2">Redirecting you...</h1>
             <p class="text-slate-400 text-xs mb-4 truncate">${link.originalUrl}</p>
+            ${link.burnAfterUse ? '<div class="p-2 mb-4 bg-red-500/10 border border-red-500/20 text-red-400 text-xs rounded-lg">🔥 Single-use link: This URL has now been deleted.</div>' : ''}
             <p class="text-xs text-slate-500 mb-6">You will be forwarded automatically in 2 seconds.</p>
             <a href="${link.originalUrl}" class="inline-flex items-center justify-center px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-xs font-medium">
               Click here if not redirected
